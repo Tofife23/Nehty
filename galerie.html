@@ -1,0 +1,251 @@
+<!DOCTYPE html> 
+<html lang="cs">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Divine Nails | Galerie</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <style>
+      .gallery-image:hover {
+        transform: scale(1.05);
+      }
+      /* Lightbox styl */
+      #lightbox {
+        background: rgba(0,0,0,0.85);
+        backdrop-filter: blur(5px);
+        transition: opacity 0.3s ease;
+      }
+
+      #lightboxImage {
+        max-width: 70vw;
+        max-height: 70vh;
+}
+    </style>
+</head>
+<body class="font-sans bg-pink-50">
+
+  <!-- Loader -->
+    <div id="loader" class="fixed inset-0 bg-white z-[9999] flex items-center justify-center transition-opacity duration-700">
+        <div class="w-12 h-12 border-[5px] border-pink-500 border-t-transparent rounded-full animate-spin"></div>
+    </div>
+
+  <!-- Navigation (stejná jako předtím) -->
+  <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between items-center py-4">
+        <a href="index.html" class="flex items-center">
+          <img src="img/D.png" alt="Divine Nails Logo" class="h-8 w-8 object-contain mr-2">
+          <span class="font-semibold text-gray-800 text-xl">Divine Nails</span>
+        </a>
+        <div class="hidden md:flex items-center space-x-4">
+          <a href="index.html" class="text-gray-600 hover:text-pink-500 font-semibold py-2 px-3 transition duration-300">Domů</a>
+          <a href="cenik.html" class="text-gray-600 hover:text-pink-500 font-semibold py-2 px-3 transition duration-300">Ceník</a>
+          <a href="galerie.html" class="text-pink-500 border-b-2 border-pink-500 font-semibold py-2 px-3">Galerie</a>
+          <a href="kontakt.html" class="text-gray-600 hover:text-pink-500 font-semibold py-2 px-3 transition duration-300">Kontakt</a>
+          <a href="kontakt.html" class="ml-4 bg-pink-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-pink-600 transition duration-300">
+            Rezervace <i class="fas fa-calendar-check ml-1"></i>
+          </a>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button id="mobile-open" class="outline-none">
+            <i class="fas fa-bars text-2xl text-gray-700"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+    <div class="flex justify-end items-center p-4 border-b">
+      <button id="mobile-close" class="text-gray-600">
+        <i class="fas fa-times text-xl"></i>
+      </button>
+    </div>
+    <nav class="flex flex-col p-4 space-y-5 text-lg font-semibold">
+      <a href="index.html" class="text-gray-800 hover:text-pink-500">Domů</a>
+      <a href="cenik.html" class="text-gray-800 hover:text-pink-500">Ceník</a>
+      <a href="galerie.html" class="text-pink-500 font-semibold">Galerie</a>
+      <a href="kontakt.html" class="text-gray-800 hover:text-pink-500">Kontakt</a>
+      <a href="kontakt.html" class="bg-pink-500 text-white text-center py-2 px-4 rounded hover:bg-pink-600">Rezervace</a>
+    </nav>
+  </div>
+  <img src="img/ruzicka.jpg"
+     alt=""
+     class="absolute top-20 left-10 w-32 opacity-20 rotate-[-15deg] z-0 pointer-events-none select-none hidden sm:block">
+
+  <img src="img/ruzicka.jpg"
+     alt=""
+     class="absolute top-20 right-10 w-32 opacity-20 rotate-[-15deg] z-0 pointer-events-none select-none hidden sm:block">
+
+
+  <!-- Galerie -->
+  <main class="py-20 bg-white min-h-[80vh]">
+    <div class="relative mb-8 text-center">
+      <h1 class="text-5xl font-extrabold bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-transparent bg-clip-text drop-shadow-md">
+    Galerie
+  </h1>
+<br>
+      
+
+      <div id="gallery" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 md:px-6">
+        <img src="img/nehty8.jpeg" alt="Design nehtů 2" class="gallery-image rounded-lg shadow-md h-64 w-full cursor-pointer transition-transform duration-300" loading="lazy" data-index="1" />
+        <img src="img/nehty10.jpeg" alt="Design nehtů 2" class="gallery-image rounded-lg shadow-md  h-64 w-full cursor-pointer transition-transform duration-300" loading="lazy" data-index="1" />
+        <img src="img/nehty7.jpeg" alt="Design nehtů 3" class="gallery-image rounded-lg shadow-md object-cover h-64 w-full cursor-pointer transition-transform duration-300" loading="lazy" data-index="2" />
+        <img src="img/nehty11.jpeg" alt="Design nehtů 4" class="gallery-image rounded-lg shadow-md object-cover h-64 w-full cursor-pointer transition-transform duration-300" loading="lazy" data-index="3" />
+        <img src="img/nehty2.jpeg" alt="Design nehtů 5" class="gallery-image rounded-lg shadow-md object-cover h-64 w-full cursor-pointer transition-transform duration-300" loading="lazy" data-index="4" />
+        <img src="img/nehty1.jpeg" alt="Design nehtů 6" class="gallery-image rounded-lg shadow-md object-cover h-64 w-full cursor-pointer transition-transform duration-300" loading="lazy" data-index="5" />
+        <img src="img/nehty5.jpeg" alt="Design nehtů 7" class="gallery-image rounded-lg shadow-md object-cover h-64 w-full cursor-pointer transition-transform duration-300" loading="lazy" data-index="6" />
+        <img src="img/nehty6.jpeg" alt="Design nehtů 8" class="gallery-image rounded-lg shadow-md object-cover h-64 w-full cursor-pointer transition-transform duration-300" loading="lazy" data-index="7" />
+      </div>
+    </div>
+  </main>
+
+  <!-- Lightbox modal -->
+  <div id="lightbox" class="fixed inset-0 hidden items-center justify-center z-60">
+    <button id="closeLightbox" class="absolute top-6 right-6 text-white text-4xl hover:text-pink-400 z-70" aria-label="Zavřít galerii">&times;</button>
+    <button id="prevBtn" class="absolute left-6 text-white text-5xl hover:text-pink-400 z-70" aria-label="Předchozí obrázek">&#10094;</button>
+    <img id="lightboxImage" src="" alt="Zvětšený obrázek" class="max-h-[90vh] max-w-[90vw] rounded-lg shadow-lg" />
+    <button id="nextBtn" class="absolute right-6 text-white text-5xl hover:text-pink-400 z-70" aria-label="Další obrázek">&#10095;</button>
+  </div>
+
+  <!-- Footer (stejný jako předtím) -->
+  <footer class="bg-gray-900 text-white py-16">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-12">
+        <div class="md:col-span-1">
+          <h3 class="text-xl font-semibold mb-4">Divine Nails</h3>
+          <p class="text-gray-400">Profesionální nehtové studio s láskou k detailu a dokonalému vzhledu.</p>
+        </div>
+        <div class="md:col-span-1">
+          <h3 class="text-xl font-semibold mb-4">Kontakt</h3>
+          <ul class="space-y-2 text-gray-400">
+            <li class="flex items-center"><i class="fas fa-envelope mr-2"></i> info@divinenails.cz</li>
+          </ul>
+        </div>
+        <div class="md:col-span-1">
+          <h3 class="text-xl font-semibold mb-4">Sledujte nás</h3>
+          <div class="flex space-x-4">
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/divinenaillounge.campus" target="_blank" class="text-gray-400 hover:text-[#1877F2] text-2xl transition-colors duration-300">
+              <i class="fab fa-facebook"></i>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/divinenails_brno/" target="_blank" class="text-gray-400 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-yellow-400 hover:via-pink-500 hover:to-purple-600 text-2xl transition-colors duration-300">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+        <p>&copy; 2025 Divine Nails. Všechna práva vyhrazena.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile menu script -->
+  <script>
+    const openBtn = document.getElementById("mobile-open");
+    const closeBtn = document.getElementById("mobile-close");
+    const menu = document.getElementById("mobile-menu");
+    const overlay = document.getElementById("mobile-overlay");
+
+    function openMenu() {
+      overlay.classList.remove("hidden");
+      setTimeout(() => {
+        menu.classList.remove("translate-x-full");
+      }, 10);
+    }
+
+    function closeMenu() {
+      menu.classList.add("translate-x-full");
+      setTimeout(() => {
+        overlay.classList.add("hidden");
+      }, 300);
+    }
+
+    openBtn.addEventListener("click", openMenu);
+    closeBtn.addEventListener("click", closeMenu);
+    overlay.addEventListener("click", closeMenu);
+  </script>
+
+  <!-- Lightbox script -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const images = document.querySelectorAll("#gallery img");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const closeBtn = document.getElementById("closeLightbox");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    let currentIndex = 0;
+
+    function showLightbox(index) {
+      currentIndex = index;
+      lightboxImage.src = images[currentIndex].src;
+      lightbox.classList.remove("hidden");
+      lightbox.classList.add("flex");
+      document.body.style.overflow = "hidden";
+    }
+
+    function hideLightbox() {
+      lightbox.classList.add("hidden");
+      lightbox.classList.remove("flex");
+      document.body.style.overflow = "";
+    }
+
+    function showNext() {
+      currentIndex = (currentIndex + 1) % images.length;
+      lightboxImage.src = images[currentIndex].src;
+    }
+
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      lightboxImage.src = images[currentIndex].src;
+    }
+
+    images.forEach((img, idx) => {
+      img.addEventListener("click", () => showLightbox(idx));
+    });
+
+    closeBtn.addEventListener("click", hideLightbox);
+    prevBtn.addEventListener("click", showPrev);
+    nextBtn.addEventListener("click", showNext);
+
+    // ESC zavření a šipky
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") hideLightbox();
+      if (e.key === "ArrowRight") showNext();
+      if (e.key === "ArrowLeft") showPrev();
+    });
+
+    // 💡 Kliknutí mimo obrázek zavře lightbox
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        hideLightbox();
+      }
+    });
+  });
+</script>
+
+<!-- Loader -->
+<script>
+  window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    loader.classList.add('opacity-0');
+    setTimeout(() => {
+      loader.style.display = 'none';
+    }, 300); // odpovídá `duration-700`
+  });
+</script>
+
+</body>
+</html>

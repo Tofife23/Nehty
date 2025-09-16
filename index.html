@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divine Nails | Domů</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <style>
+        .hero {
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('img/studio.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .branch-card {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .branch-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+        }
+        .branch-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.8) 100%);
+            border-radius: 8px;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        .branch-card:hover::before {
+            background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.7) 100%);
+        }
+        .branch-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+            border-radius: 0 0 8px 8px;
+            z-index: 1;
+        }
+        .branch-content {
+            position: relative;
+            z-index: 2;
+        }
+        .gallery-card {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gallery-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(236, 72, 153, 0.15);
+        }
+        
+        .gallery-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(236, 72, 153, 0.1) 0%, rgba(157, 23, 77, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+        
+        .gallery-card:hover::before {
+            opacity: 1;
+        }
+        
+        .gallery-card img {
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .floating-element {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .floating-element:nth-child(2) {
+            animation-delay: -1s;
+        }
+        
+        .floating-element:nth-child(3) {
+            animation-delay: -2s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .gradient-border {
+            position: relative;
+            background: linear-gradient(45deg, #ec4899, #be185d, #ec4899, #be185d);
+            background-size: 200% 200%;
+            animation: gradientShift 3s ease infinite;
+            padding: 3px;
+            border-radius: 20px;
+        }
+        
+        .gradient-border::after {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            background: white;
+            border-radius: 17px;
+            z-index: -1;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .main-gallery-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .service-card {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(236, 72, 153, 0.15);
+        }
+        
+        .service-card img {
+            transition: transform 0.4s ease;
+        }
+        
+        .service-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gradient-bg-1 {
+            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 50%, #f3e8ff 100%);
+        }
+        
+        .gradient-bg-2 {
+            background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 50%, #fce7f3 100%);
+        }
+        
+        .gradient-bg-3 {
+            background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 50%, #fdf2f8 100%);
+        }
+        
+        .floating-icon {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #ec4899, #be185d);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover .floating-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .modern-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background-color: #ec4899;
+            color: white;
+            font-weight: bold;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            z-index: 10;
+        }
+        
+        .service-content {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body class="font-sans bg-pink-50">
+
+    <!-- Loader -->
+    <div id="loader" class="fixed inset-0 bg-white z-[9999] flex items-center justify-center transition-opacity duration-700">
+        <div class="w-12 h-12 border-[5px] border-pink-500 border-t-transparent rounded-full animate-spin"></div>
+    </div>
+
+    <!-- Navigation -->
+    <div id="navigation"></div>
+
+    <!-- Hero Section -->
+    <section class="hero text-white py-24 md:py-40 relative">
+        <div class="absolute inset-0 bg-black/30"></div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight">Vaše oblíbené <br>nehtové salony</h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto font-light">Profesionální péče v moderním prostředí </p>
+            <a href="kontakt.html" class="group bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 px-10 rounded-full text-lg transition duration-300 inline-block shadow-lg hover:shadow-xl">
+                Rezervovat termín <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section class="py-16 bg-gradient-to-b from-white to-pink-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                    Naše 
+                    <span class="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">služby</span>
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Profesionální péče v moderním prostředí s důrazem na kvalitu a spokojenost</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 - Gelové nehty -->
+                <div class="service-card bg-white rounded-3xl overflow-hidden shadow-lg relative">
+                    <div class="floating-icon">
+                        <i class="fas fa-hand-sparkles"></i>
+                    </div>
+                    <div class="modern-badge">Nejoblíbenější</div>
+                    <div class="gradient-bg-1 p-4 relative">
+                        <div class="overflow-hidden rounded-2xl">
+                            <img src="img/nehty4.jpeg" alt="Gelové nehty" class="w-full h-64 object-cover">
+                        </div>
+                    </div>
+                    <div class="service-content p-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Gelové nehty</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Dokonalé gelové nehty s dlouhou výdrží a lesklým efektem pro elegantní vzhled.</p>
+                        <a href="cenik.html" class="inline-flex items-center text-pink-500 font-semibold hover:text-pink-600 transition-colors duration-300 group">
+                            <span>Zobrazit ceník</span>
+                            <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 - Řasy a obočí -->
+                <div class="service-card bg-white rounded-3xl overflow-hidden shadow-lg relative">
+                    <div class="floating-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="modern-badge">Novinka</div>
+                    <div class="gradient-bg-2 p-4 relative">
+                        <div class="overflow-hidden rounded-2xl">
+                            <img src="img/jihlava.jpg" alt="Řasy a obočí" class="w-full h-64 object-cover">
+                        </div>
+                    </div>
+                    <div class="service-content p-6">
+                        <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 whitespace-nowrap overflow-hidden text-ellipsis" title="Prodlužování řas a úprava obočí">
+                            Prodlužování řas a úprava obočí
+                        </h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Profesionální péče o vaše řasy a obočí pro dokonalý a výrazný pohled.</p>
+                        <a href="cenik.html" class="inline-flex items-center text-pink-500 font-semibold hover:text-pink-600 transition-colors duration-300 group">
+                            <span>Zobrazit ceník</span>
+                            <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 3 - Pedikúra -->
+                <div class="service-card bg-white rounded-3xl overflow-hidden shadow-lg relative">
+                    <div class="floating-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <div class="modern-badge">Premium</div>
+                    <div class="gradient-bg-3 p-4 relative">
+                        <div class="overflow-hidden rounded-2xl">
+                            <img src="img/pedikura.jpg" alt="Pedikúra" class="w-full h-64 object-cover">
+                        </div>
+                    </div>
+                    <div class="service-content p-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Pedikúra Footlogix</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Luxusní péče o vaše nohy s profesionálními produkty Footlogix pro maximální komfort.</p>
+                        <a href="galerie.html" class="inline-flex items-center text-pink-500 font-semibold hover:text-pink-600 transition-colors duration-300 group">
+                            <span>Prohlédnout galerii</span>
+                            <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Preview -->
+    <section class="py-20 relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute top-10 left-10 w-20 h-20 bg-pink-200/30 rounded-full floating-element"></div>
+        <div class="absolute top-32 right-20 w-12 h-12 bg-pink-300/30 rounded-full floating-element"></div>
+        <div class="absolute bottom-20 left-1/4 w-16 h-16 bg-pink-100/30 rounded-full floating-element"></div>
+        <div class="container mx-auto px-6 relative">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <!-- Left content -->
+                <div class="lg:w-2/5 space-y-8">
+                    <div class="main-gallery-card rounded-3xl p-8">
+                        <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
+                            Naše
+                            <span class="bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
+                                práce
+                            </span>
+                        </h2>
+                        <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                            Prohlédněte si naši galerii plnou inspirace pro váš dokonalý vzhled nehtů. Každý design je unikátní a vytvořený s láskou k detailu.
+                        </p>
+                        <div class="gradient-border inline-block">
+                            <a href="galerie.html" class="bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white font-bold py-4 px-8 rounded-2xl inline-flex items-center gap-3 transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                                <span>Prohlédnout celou galerii</span>
+                                <i class="fas fa-images text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right gallery grid -->
+                <div class="lg:w-3/5">
+                    <div class="grid grid-cols-2 gap-6">
+                        <!-- Card 1 -->
+                        <div class="gallery-card rounded-3xl overflow-hidden shadow-lg bg-white">
+                            <div class="relative h-48">
+                                <img src="img/nehty8.jpeg" alt="Nail design 1" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-pink-500/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Card 2 -->
+                        <div class="gallery-card rounded-3xl overflow-hidden shadow-lg bg-white">
+                            <div class="relative h-48">
+                                <img src="img/nehty10.jpeg" alt="Nail design 2" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-br from-pink-500/10 to-purple-500/10 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Card 3 -->
+                        <div class="gallery-card rounded-3xl overflow-hidden shadow-lg bg-white">
+                            <div class="relative h-48">
+                                <img src="img/nehty7.jpeg" alt="Nail design 3" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-bl from-pink-500/10 to-rose-500/10 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Card 4 -->
+                        <div class="gallery-card rounded-3xl overflow-hidden shadow-lg bg-white">
+                            <div class="relative h-48">
+                                <img src="img/nehty11.jpeg" alt="Nail design 4" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-r from-pink-500/10 via-transparent to-purple-500/10 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating stats -->
+                    <div class="mt-8 flex justify-center lg:justify-end gap-6">
+                        <div class="bg-white/80 backdrop-blur-sm rounded-2xl px-6 py-4 shadow-lg floating-element">
+                            <div class="text-2xl font-bold text-pink-600">1000+</div>
+                            <div class="text-sm text-gray-600">Spokojených klientek</div>
+                        </div>
+                        <div class="bg-white/80 backdrop-blur-sm rounded-2xl px-6 py-4 shadow-lg floating-element">
+                            <div class="text-2xl font-bold text-pink-600">200+</div>
+                            <div class="text-sm text-gray-600">Unikátních designů</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Branches -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Naše pobočky</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Branch 1 -->
+                <div class="branch-card bg-cover bg-center h-64 rounded-lg overflow-hidden shadow-lg transform transition-all duration-300" 
+                     style="background-image: url('img/studio5.jpg');">
+                    <div class="branch-content h-full p-6 flex flex-col justify-start text-white pt-8">
+                        <div class="transform transition-all duration-300">
+                            <h3 class="text-xl font-bold mb-3 drop-shadow-lg">OC Campus Square</h3>
+                            <div class="space-y-2">
+                                <p class="text-white/90 flex items-center drop-shadow">
+                                    <i class="fas fa-map-marker-alt text-pink-400 mr-3 drop-shadow-sm"></i>
+                                    Netroufalky 770, Brno
+                                </p>
+                                <p class="text-white/90 flex items-center drop-shadow">
+                                    <i class="fas fa-phone text-pink-400 mr-3 drop-shadow-sm"></i>
+                                    +420 771 178 888
+                                </p>
+                                <p class="text-white/90 flex items-center drop-shadow">
+                                    <i class="fas fa-clock text-pink-400 mr-3 drop-shadow-sm"></i>
+                                    Po-Ne: 9:00 - 20:00
+                                </p>
+                            </div>
+                            <a href="kontakt.html" class="text-pink-300 font-semibold hover:text-pink-200 flex items-center mt-4 group bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 hover:bg-white/20 transition-all duration-300 w-fit">
+                                Více informací 
+                                <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Branch 2 -->
+                <div class="branch-card bg-cover bg-center h-64 rounded-lg overflow-hidden shadow-lg transform transition-all duration-300" 
+                     style="background-image: url('img/studio4.jpg');">
+                    <div class="branch-content h-full p-6 flex flex-col justify-start text-white pt-8">
+                        <div class="transform transition-all duration-300">
+                            <h3 class="text-xl font-bold mb-3 drop-shadow-lg">NC Královo Pole</h3>
+                            <div class="space-y-2">
+                                <p class="text-white/90 flex items-center drop-shadow">
+                                    <i class="fas fa-map-marker-alt text-pink-400 mr-3 drop-shadow-sm"></i>
+                                    Cimburkova 4, Brno 
+                                </p>
+                                <p class="text-white/90 flex items-center drop-shadow">
+                                    <i class="fas fa-phone text-pink-400 mr-3 drop-shadow-sm"></i>
+                                    +420 770 609 999
+                                </p>
+                                <p class="text-white/90 flex items-center drop-shadow">
+                                    <i class="fas fa-clock text-pink-400 mr-3 drop-shadow-sm"></i>
+                                    Po-Ne: 9:00 - 21:00
+                                </p>
+                            </div>
+                            <a href="kontakt.html" class="text-pink-300 font-semibold hover:text-pink-200 flex items-center mt-4 group bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 hover:bg-white/20 transition-all duration-300 w-fit">
+                                Více informací 
+                                <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Branch 3 -->
+                <div class="branch-card bg-cover bg-center h-64 rounded-lg overflow-hidden shadow-lg transform transition-all duration-300" 
+                     style="background-image: url('img/jihlava.jpg');">
+                    <div class="branch-content h-full p-6 flex flex-col justify-start text-white pt-8">
+                        <div class="transform transition-all duration-300">
+                            <h3 class="text-xl font-bold mb-3 drop-shadow-lg">Jihlava</h3>
+                            <div class="space-y-2">
+                                <p class="text-white/90 flex items-center drop-shadow">
+                                    <i class="fas fa-map-marker-alt text-pink-400 mr-3 drop-shadow-sm"></i>
+                                    Romana Havelky 4832/1a, Jihlava
+                                </p>
+                                <p class="text-white/90 flex items-center drop-shadow">
+                                    <i class="fas fa-phone text-pink-400 mr-3 drop-shadow-sm"></i>
+                                    +420 ------------- 
+                                </p>
+                                <p class="text-white/90 flex items-center drop-shadow">
+                                    <i class="fas fa-clock text-pink-400 mr-3 drop-shadow-sm"></i>
+                                    Po-Ne: 9:00 - 20:00
+                                </p>
+                            </div>
+                            <a href="kontakt.html" class="text-pink-300 font-semibold hover:text-pink-200 flex items-center mt-4 group bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 hover:bg-white/20 transition-all duration-300 w-fit">
+                                Více informací 
+                                <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Recenze klientek -->
+    <section class="py-20 bg-gradient-to-r from-pink-100 to-pink-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Co o nás říkají klientky</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Recenze 1 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border border-pink-100 hover:shadow-xl transition duration-300">
+                    <div class="flex items-center mb-4 space-x-4">
+                        <a href="https://www.google.com/maps/contrib/118036762556950135599/place/ChIJM8FiUcGVEkcRu-W9Rvd3cb8/" target="_blank" rel="noopener noreferrer">
+                            <img src="img/jarka.png" alt="V" class="w-12 h-12 rounded-full object-cover shadow-md" />
+                        </a>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Jarka Otradovcová</h4>
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Skvělé služby ve velmi příjemném prostředí, masážní křesla při pedikuře super, milí lidé. Díky."</p>
+                </div>
+
+                <!-- Recenze 2 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border border-pink-100 hover:shadow-xl transition duration-300">
+                    <div class="flex items-center mb-4 space-x-4">
+                        <a href="https://www.google.com/maps/contrib/107090859104100646600/place/ChIJM8FiUcGVEkcRu-W9Rvd3cb8/" target="_blank" rel="noopener noreferrer">
+                            <img src="img/aneta.png" alt="A" class="w-12 h-12 rounded-full object-cover shadow-md" />
+                        </a>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Prucklova Aneta</h4>
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">„Nejkrásnější nehty,jaké jsem kdy měla, rychlé, kvalitní a za skvělou cenu."</p>
+                </div>
+
+                <!-- Recenze 3 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border border-pink-100 hover:shadow-xl transition duration-300">
+                     <div class="flex items-center mb-4 space-x-4">
+                    <a href="https://www.google.com/maps/contrib/107939990515154034025/place/ChIJM8FiUcGVEkcRu-W9Rvd3cb8/" target="_blank" rel="noopener noreferrer">
+                            <img src="img/marta.png" alt="M" class="w-12 h-12 rounded-full object-cover shadow-md" />
+                          </a>
+                          <div>
+                            <h4 class="font-semibold text-gray-800">Marta Tobolová</h4>
+                            <div class="flex text-amber-400">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <p class="text-gray-600 italic">„Vždy velmi spokojená, mohu doporučit.
+            Příjemný a vždy vstřícný personál 👍 …"</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- JavaScript for loading components -->
+    <script>
+        // Loader
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            loader.classList.add('opacity-0');
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 300);
+        });
+
+        // Load navigation
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('navigation').innerHTML = html;
+                // Initialize mobile menu after nav is loaded
+                initMobileMenu();
+            })
+            .catch(error => console.error('Error loading navigation:', error));
+
+        // Load footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('footer').innerHTML = html;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+
+        // Mobile menu functionality
+        function initMobileMenu() {
+            const openBtn = document.getElementById("mobile-open");
+            const closeBtn = document.getElementById("mobile-close");
+            const menu = document.getElementById("mobile-menu");
+            const overlay = document.getElementById("mobile-overlay");
+
+            function openMenu() {
+                overlay.classList.remove("hidden");
+                setTimeout(() => {
+                    menu.classList.remove("translate-x-full");
+                }, 10);
+            }
+
+            function closeMenu() {
+                menu.classList.add("translate-x-full");
+                setTimeout(() => {
+                    overlay.classList.add("hidden");
+                }, 300);
+            }
+
+            if (openBtn && closeBtn && menu && overlay) {
+                openBtn.addEventListener("click", openMenu);
+                closeBtn.addEventListener("click", closeMenu);
+                overlay.addEventListener("click", closeMenu);
+            }
+        }
+    </script>
+
+</body>
+</html>
