@@ -11,10 +11,10 @@
         .hero {
             background-image: 
                 linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url('img/studio.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+                url('img/studio.jpg'); /* ← zde změň na svou cestu */
+            background-size: cover;         /* roztáhne do šířky i výšky */
+            background-position: center;    /* zarovná na střed */
+            background-repeat: no-repeat;   /* nebude se opakovat */
 }
         .service-card:hover {
             transform: translateY(-5px);
@@ -212,13 +212,13 @@
         }
         .modern-badge {
     position: absolute;
-    top: 1rem;
-    left: 1rem;
-    background-color: #ec4899;
+    top: 1rem;   /* vzdálenost od horní hrany karty */
+    left: 1rem;  /* nebo right: 1rem; pokud chceš vpravo */
+    background-color: #ec4899; /* pink */
     color: white;
     font-weight: bold;
     padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
+    border-radius: 9999px; /* kulaté okraje */
     font-size: 0.75rem;
     text-transform: uppercase;
     z-index: 10;
@@ -239,18 +239,18 @@
   <div class="max-w-6xl mx-auto px-4">
     <div class="flex justify-between items-center py-4">
       <!-- Logo -->
-      <a href="uvod/" class="flex items-center">
+      <a href="index.html" class="flex items-center">
         <img src="img/D.png" alt="Divine Nails Logo" class="h-8 w-8 object-contain mr-2">
         <span class="font-semibold text-gray-800 text-xl">Divine Nails</span>
       </a>
 
       <!-- Desktop navigace -->
       <div class="hidden md:flex items-center space-x-4">
-        <a href="uvod/" class="text-pink-500 border-b-2 border-pink-500 font-semibold py-2 px-3">Domů</a>
-        <a href="cenik/" class="text-gray-600 hover:text-pink-500 font-semibold py-2 px-3 transition duration-300">Ceník</a>
-        <a href="galerie/" class="text-gray-600 hover:text-pink-500 font-semibold py-2 px-3 transition duration-300">Galerie</a>
-        <a href="kontakt/" class="text-gray-600 hover:text-pink-500 font-semibold py-2 px-3 transition duration-300">Kontakt</a>
-        <a href="kontakt/" class="ml-4 bg-pink-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-pink-600 transition duration-300">
+        <a href="index.html" class="text-pink-500 border-b-2 border-pink-500 font-semibold py-2 px-3">Domů</a>
+        <a href="cenik.html" class="text-gray-600 hover:text-pink-500 font-semibold py-2 px-3 transition duration-300">Ceník</a>
+        <a href="galerie.html" class="text-gray-600 hover:text-pink-500 font-semibold py-2 px-3 transition duration-300">Galerie</a>
+        <a href="kontakt.html" class="text-gray-600 hover:text-pink-500 font-semibold py-2 px-3 transition duration-300">Kontakt</a>
+        <a href="kontakt.html" class="ml-4 bg-pink-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-pink-600 transition duration-300">
           Rezervace <i class="fas fa-calendar-check ml-1"></i>
         </a>
       </div>
@@ -275,11 +275,11 @@
     </button>
   </div>
   <nav class="flex flex-col p-4 space-y-5 text-lg font-semibold">
-    <a href="uvod/" class="text-pink-500">Domů</a>
-    <a href="cenik/" class="text-gray-800 hover:text-pink-500">Ceník</a>
-    <a href="galerie/" class="text-gray-800 hover:text-pink-500">Galerie</a>
-    <a href="kontakt/" class="text-gray-800 hover:text-pink-500">Kontakt</a>
-    <a href="kontakt/" class="bg-pink-500 text-white text-center py-2 px-4 rounded hover:bg-pink-600">
+    <a href="index.html" class="text-pink-500">Domů</a>
+    <a href="cenik.html" class="text-gray-800 hover:text-pink-500">Ceník</a>
+    <a href="galerie.html" class="text-gray-800 hover:text-pink-500">Galerie</a>
+    <a href="kontakt.html" class="text-gray-800 hover:text-pink-500">Kontakt</a>
+    <a href="kontakt.html" class="bg-pink-500 text-white text-center py-2 px-4 rounded hover:bg-pink-600">
       Rezervace
     </a>
   </nav>
@@ -293,7 +293,7 @@
         <div class="container mx-auto px-6 text-center relative z-10">
             <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight">Vaše oblíbené <br>nehtové salony</h1>
             <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto font-light">Profesionální péče v moderním prostředí </p>
-            <a href="kontakt/" class="group bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 px-10 rounded-full text-lg transition duration-300 inline-block shadow-lg hover:shadow-xl">
+            <a href="kontakt.html" class="group bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 px-10 rounded-full text-lg transition duration-300 inline-block shadow-lg hover:shadow-xl">
     Rezervovat termín <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1">                    </i>
             </a>
         </div>
@@ -325,7 +325,7 @@
                     <div class="service-content p-8">
                         <h3 class="text-2xl font-bold text-gray-800 mb-4">Gelové nehty</h3>
                         <p class="text-gray-600 mb-6 leading-relaxed">Dokonalé gelové nehty s dlouhou výdrží a lesklým efektem pro elegantní vzhled.</p>
-                        <a href="cenik/" class="inline-flex items-center text-pink-500 font-semibold hover:text-pink-600 transition-colors duration-300 group">
+                        <a href="cenik.html" class="inline-flex items-center text-pink-500 font-semibold hover:text-pink-600 transition-colors duration-300 group">
                             <span>Zobrazit ceník</span>
                             <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
                         </a>
@@ -343,12 +343,12 @@
             <img src="img/jihlava.jpg" alt="Řasy a obočí" class="w-full h-64 object-cover">
         </div>
     </div>
-    <div class="service-content p-6">
+    <div class="service-content p-6"> <!-- menší padding -->
         <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 whitespace-nowrap overflow-hidden text-ellipsis"  title="Prodlužování řas a úprava obočí">
             Prodlužování řas a úprava obočí
         </h3>
         <p class="text-gray-600 mb-6 leading-relaxed">Profesionální péče o vaše řasy a obočí pro dokonalý a výrazný pohled.</p>
-        <a href="cenik/" class="inline-flex items-center text-pink-500 font-semibold hover:text-pink-600 transition-colors duration-300 group">
+        <a href="cenik.html" class="inline-flex items-center text-pink-500 font-semibold hover:text-pink-600 transition-colors duration-300 group">
             <span>Zobrazit ceník</span>
             <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
         </a>
@@ -369,7 +369,7 @@
                     <div class="service-content p-8">
                         <h3 class="text-2xl font-bold text-gray-800 mb-4">Pedikúra Footlogix</h3>
                         <p class="text-gray-600 mb-6 leading-relaxed">Luxusní péče o vaše nohy s profesionálními produkty Footlogix pro maximální komfort.</p>
-                        <a href="galerie/" class="inline-flex items-center text-pink-500 font-semibold hover:text-pink-600 transition-colors duration-300 group">
+                        <a href="galerie.html" class="inline-flex items-center text-pink-500 font-semibold hover:text-pink-600 transition-colors duration-300 group">
                             <span>Prohlédnout galerii</span>
                             <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
                         </a>
@@ -400,7 +400,7 @@
                         Prohlédněte si naši galerii plnou inspirace pro váš dokonalý vzhled nehtů. Každý design je unikátní a vytvořený s láskou k detailu.
                     </p>
                     <div class="gradient-border inline-block">
-                        <a href="galerie/" class="bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white font-bold py-4 px-8 rounded-2xl inline-flex items-center gap-3 transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                        <a href="galerie.html" class="bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white font-bold py-4 px-8 rounded-2xl inline-flex items-center gap-3 transition-all duration-300 hover:scale-105 hover:shadow-lg">
                             <span>Prohlédnout celou galerii</span>
                             <i class="fas fa-images text-lg"></i>
                         </a>
@@ -486,7 +486,7 @@
                                 Po-Ne: 9:00 - 20:00
                             </p>
                         </div>
-                        <a href="kontakt/" class="text-pink-300 font-semibold hover:text-pink-200 flex items-center mt-4 group bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 hover:bg-white/20 transition-all duration-300 w-fit">
+                        <a href="kontakt.html" class="text-pink-300 font-semibold hover:text-pink-200 flex items-center mt-4 group bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 hover:bg-white/20 transition-all duration-300 w-fit">
                             Více informací 
                             <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
                         </a>
@@ -514,7 +514,7 @@
                                 Po-Ne: 9:00 - 21:00
                             </p>
                         </div>
-                        <a href="kontakt/" class="text-pink-300 font-semibold hover:text-pink-200 flex items-center mt-4 group bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 hover:bg-white/20 transition-all duration-300 w-fit">
+                        <a href="kontakt.html" class="text-pink-300 font-semibold hover:text-pink-200 flex items-center mt-4 group bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 hover:bg-white/20 transition-all duration-300 w-fit">
                             Více informací 
                             <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
                         </a>
@@ -542,7 +542,7 @@
                                 Po-Ne: 9:00 - 20:00
                             </p>
                         </div>
-                        <a href="kontakt/" class="text-pink-300 font-semibold hover:text-pink-200 flex items-center mt-4 group bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 hover:bg-white/20 transition-all duration-300 w-fit">
+                        <a href="kontakt.html" class="text-pink-300 font-semibold hover:text-pink-200 flex items-center mt-4 group bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 hover:bg-white/20 transition-all duration-300 w-fit">
                             Více informací 
                             <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
                         </a>
@@ -667,13 +667,6 @@
 
     <!-- Mobile menu script -->
     <script>
-
-if (!window.location.pathname.endsWith("/") && window.location.pathname !== "/") {
-  window.location.href = window.location.pathname + "/" + window.location.search + window.location.hash;
-}
-
-
-
   const openBtn = document.getElementById("mobile-open");
   const closeBtn = document.getElementById("mobile-close");
   const menu = document.getElementById("mobile-menu");
