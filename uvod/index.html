@@ -6,15 +6,15 @@
     <title>Divine Nails | Domů</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="icon" href="../img/favicon.png" type="image/png">
     <style>
         .hero {
             background-image: 
                 linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url('img/studio.jpg'); /* ← zde změň na svou cestu */
-            background-size: cover;         /* roztáhne do šířky i výšky */
-            background-position: center;    /* zarovná na střed */
-            background-repeat: no-repeat;   /* nebude se opakovat */
+                url('../img/studio.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
 }
         .service-card:hover {
             transform: translateY(-5px);
@@ -212,13 +212,13 @@
         }
         .modern-badge {
     position: absolute;
-    top: 1rem;   /* vzdálenost od horní hrany karty */
-    left: 1rem;  /* nebo right: 1rem; pokud chceš vpravo */
-    background-color: #ec4899; /* pink */
+    top: 1rem;
+    left: 1rem;
+    background-color: #ec4899;
     color: white;
     font-weight: bold;
     padding: 0.25rem 0.75rem;
-    border-radius: 9999px; /* kulaté okraje */
+    border-radius: 9999px;
     font-size: 0.75rem;
     text-transform: uppercase;
     z-index: 10;
@@ -239,18 +239,18 @@
   <div class="max-w-6xl mx-auto px-4">
     <div class="flex justify-between items-center py-4">
       <!-- Logo -->
-      <a href="index.html" class="flex items-center">
-        <img src="img/D.png" alt="Divine Nails Logo" class="h-8 w-8 object-contain mr-2">
+      <a href="../uvod/" class="flex items-center">
+        <img src="../img/D.png" alt="Divine Nails Logo" class="h-8 w-8 object-contain mr-2">
         <span class="font-semibold text-gray-800 text-xl">Divine Nails</span>
       </a>
 
       <!-- Desktop navigace -->
       <div class="hidden md:flex items-center space-x-4">
-        <a href="index.html" class="text-pink-500 border-b-2 border-pink-500 font-semibold py-2 px-3">Domů</a>
-        <a href="cenik.html" class="text-gray-600 hover:text-pink-500 font-semibold py-2 px-3 transition duration-300">Ceník</a>
-        <a href="galerie.html" class="text-gray-600 hover:text-pink-500 font-semibold py-2 px-3 transition duration-300">Galerie</a>
-        <a href="kontakt.html" class="text-gray-600 hover:text-pink-500 font-semibold py-2 px-3 transition duration-300">Kontakt</a>
-        <a href="kontakt.html" class="ml-4 bg-pink-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-pink-600 transition duration-300">
+        <a href="../uvod/" class="text-pink-500 border-b-2 border-pink-500 font-semibold py-2 px-3">Domů</a>
+        <a href="../cenik/" class="text-gray-600 hover:text-pink-500 font-semibold py-2 px-3 transition duration-300">Ceník</a>
+        <a href="../galerie/" class="text-gray-600 hover:text-pink-500 font-semibold py-2 px-3 transition duration-300">Galerie</a>
+        <a href="../kontakt/" class="text-gray-600 hover:text-pink-500 font-semibold py-2 px-3 transition duration-300">Kontakt</a>
+        <a href="../kontakt/" class="ml-4 bg-pink-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-pink-600 transition duration-300">
           Rezervace <i class="fas fa-calendar-check ml-1"></i>
         </a>
       </div>
@@ -275,11 +275,11 @@
     </button>
   </div>
   <nav class="flex flex-col p-4 space-y-5 text-lg font-semibold">
-    <a href="index.html" class="text-pink-500">Domů</a>
-    <a href="cenik.html" class="text-gray-800 hover:text-pink-500">Ceník</a>
-    <a href="galerie.html" class="text-gray-800 hover:text-pink-500">Galerie</a>
-    <a href="kontakt.html" class="text-gray-800 hover:text-pink-500">Kontakt</a>
-    <a href="kontakt.html" class="bg-pink-500 text-white text-center py-2 px-4 rounded hover:bg-pink-600">
+    <a href="../uvod/" class="text-pink-500">Domů</a>
+    <a href="../cenik/" class="text-gray-800 hover:text-pink-500">Ceník</a>
+    <a href="../galerie/" class="text-gray-800 hover:text-pink-500">Galerie</a>
+    <a href="../kontakt/" class="text-gray-800 hover:text-pink-500">Kontakt</a>
+    <a href="../kontakt/" class="bg-pink-500 text-white text-center py-2 px-4 rounded hover:bg-pink-600">
       Rezervace
     </a>
   </nav>
@@ -293,7 +293,7 @@
         <div class="container mx-auto px-6 text-center relative z-10">
             <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight">Vaše oblíbené <br>nehtové salony</h1>
             <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto font-light">Profesionální péče v moderním prostředí </p>
-            <a href="kontakt.html" class="group bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 px-10 rounded-full text-lg transition duration-300 inline-block shadow-lg hover:shadow-xl">
+            <a href="../kontakt/" class="group bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 px-10 rounded-full text-lg transition duration-300 inline-block shadow-lg hover:shadow-xl">
     Rezervovat termín <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1">                    </i>
             </a>
         </div>
@@ -319,13 +319,13 @@
                     <div class="modern-badge">Nejoblíbenější</div>
                     <div class="gradient-bg-1 p-4 relative">
                         <div class="overflow-hidden rounded-2xl">
-                            <img src="img/nehty4.jpeg" alt="Gelové nehty" class="w-full h-64 object-cover">
+                            <img src="../img/nehty4.jpeg" alt="Gelové nehty" class="w-full h-64 object-cover">
                         </div>
                     </div>
                     <div class="service-content p-8">
                         <h3 class="text-2xl font-bold text-gray-800 mb-4">Gelové nehty</h3>
                         <p class="text-gray-600 mb-6 leading-relaxed">Dokonalé gelové nehty s dlouhou výdrží a lesklým efektem pro elegantní vzhled.</p>
-                        <a href="cenik.html" class="inline-flex items-center text-pink-500 font-semibold hover:text-pink-600 transition-colors duration-300 group">
+                        <a href="../cenik/" class="inline-flex items-center text-pink-500 font-semibold hover:text-pink-600 transition-colors duration-300 group">
                             <span>Zobrazit ceník</span>
                             <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
                         </a>
@@ -340,15 +340,15 @@
     <div class="modern-badge">Novinka</div>
     <div class="gradient-bg-2 p-4 relative">
         <div class="overflow-hidden rounded-2xl">
-            <img src="img/jihlava.jpg" alt="Řasy a obočí" class="w-full h-64 object-cover">
+            <img src="../img/jihlava.jpg" alt="Řasy a obočí" class="w-full h-64 object-cover">
         </div>
     </div>
-    <div class="service-content p-6"> <!-- menší padding -->
+    <div class="service-content p-6">
         <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 whitespace-nowrap overflow-hidden text-ellipsis"  title="Prodlužování řas a úprava obočí">
             Prodlužování řas a úprava obočí
         </h3>
         <p class="text-gray-600 mb-6 leading-relaxed">Profesionální péče o vaše řasy a obočí pro dokonalý a výrazný pohled.</p>
-        <a href="cenik.html" class="inline-flex items-center text-pink-500 font-semibold hover:text-pink-600 transition-colors duration-300 group">
+        <a href="../cenik/" class="inline-flex items-center text-pink-500 font-semibold hover:text-pink-600 transition-colors duration-300 group">
             <span>Zobrazit ceník</span>
             <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
         </a>
@@ -363,13 +363,13 @@
                     <div class="modern-badge">Premium</div>
                     <div class="gradient-bg-3 p-4 relative">
                         <div class="overflow-hidden rounded-2xl">
-                            <img src="img/pedikura.jpg" alt="Pedikúra" class="w-full h-64 object-cover">
+                            <img src="../img/pedikura.jpg" alt="Pedikúra" class="w-full h-64 object-cover">
                         </div>
                     </div>
                     <div class="service-content p-8">
                         <h3 class="text-2xl font-bold text-gray-800 mb-4">Pedikúra Footlogix</h3>
                         <p class="text-gray-600 mb-6 leading-relaxed">Luxusní péče o vaše nohy s profesionálními produkty Footlogix pro maximální komfort.</p>
-                        <a href="galerie.html" class="inline-flex items-center text-pink-500 font-semibold hover:text-pink-600 transition-colors duration-300 group">
+                        <a href="../galerie/" class="inline-flex items-center text-pink-500 font-semibold hover:text-pink-600 transition-colors duration-300 group">
                             <span>Prohlédnout galerii</span>
                             <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
                         </a>
@@ -400,7 +400,7 @@
                         Prohlédněte si naši galerii plnou inspirace pro váš dokonalý vzhled nehtů. Každý design je unikátní a vytvořený s láskou k detailu.
                     </p>
                     <div class="gradient-border inline-block">
-                        <a href="galerie.html" class="bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white font-bold py-4 px-8 rounded-2xl inline-flex items-center gap-3 transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                        <a href="../galerie/" class="bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white font-bold py-4 px-8 rounded-2xl inline-flex items-center gap-3 transition-all duration-300 hover:scale-105 hover:shadow-lg">
                             <span>Prohlédnout celou galerii</span>
                             <i class="fas fa-images text-lg"></i>
                         </a>
@@ -414,7 +414,7 @@
                     <!-- Card 1 -->
                     <div class="gallery-card rounded-3xl overflow-hidden shadow-lg bg-white">
                         <div class="relative h-48">
-                            <img src="img/nehty8.jpeg" alt="Nail design 1" class="w-full h-full object-cover">
+                            <img src="../img/nehty8.jpeg" alt="Nail design 1" class="w-full h-full object-cover">
                             <div class="absolute inset-0 bg-gradient-to-t from-pink-500/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
                     </div>
@@ -422,7 +422,7 @@
                     <!-- Card 2 -->
                     <div class="gallery-card rounded-3xl overflow-hidden shadow-lg bg-white">
                         <div class="relative h-48">
-                            <img src="img/nehty10.jpeg" alt="Nail design 2" class="w-full h-full object-cover">
+                            <img src="../img/nehty10.jpeg" alt="Nail design 2" class="w-full h-full object-cover">
                             <div class="absolute inset-0 bg-gradient-to-br from-pink-500/10 to-purple-500/10 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
                     </div>
@@ -430,7 +430,7 @@
                     <!-- Card 3 -->
                     <div class="gallery-card rounded-3xl overflow-hidden shadow-lg bg-white">
                         <div class="relative h-48">
-                            <img src="img/nehty7.jpeg" alt="Nail design 3" class="w-full h-full object-cover">
+                            <img src="../img/nehty7.jpeg" alt="Nail design 3" class="w-full h-full object-cover">
                             <div class="absolute inset-0 bg-gradient-to-bl from-pink-500/10 to-rose-500/10 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
                     </div>
@@ -438,7 +438,7 @@
                     <!-- Card 4 -->
                     <div class="gallery-card rounded-3xl overflow-hidden shadow-lg bg-white">
                         <div class="relative h-48">
-                            <img src="img/nehty11.jpeg" alt="Nail design 4" class="w-full h-full object-cover">
+                            <img src="../img/nehty11.jpeg" alt="Nail design 4" class="w-full h-full object-cover">
                             <div class="absolute inset-0 bg-gradient-to-r from-pink-500/10 via-transparent to-purple-500/10 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                             
                         </div>
@@ -468,7 +468,7 @@
         <div class="grid md:grid-cols-3 gap-6">
             <!-- Branch 1 -->
             <div class="branch-card bg-cover bg-center h-64 rounded-lg overflow-hidden shadow-lg transform transition-all duration-300" 
-                 style="background-image: url('img/studio5.jpg');">
+                 style="background-image: url('../img/studio5.jpg');">
                 <div class="branch-content h-full p-6 flex flex-col justify-start text-white pt-8">
                     <div class="transform transition-all duration-300">
                         <h3 class="text-xl font-bold mb-3 drop-shadow-lg">OC Campus Square</h3>
@@ -486,7 +486,7 @@
                                 Po-Ne: 9:00 - 20:00
                             </p>
                         </div>
-                        <a href="kontakt.html" class="text-pink-300 font-semibold hover:text-pink-200 flex items-center mt-4 group bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 hover:bg-white/20 transition-all duration-300 w-fit">
+                        <a href="../kontakt/" class="text-pink-300 font-semibold hover:text-pink-200 flex items-center mt-4 group bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 hover:bg-white/20 transition-all duration-300 w-fit">
                             Více informací 
                             <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
                         </a>
@@ -496,7 +496,7 @@
 
             <!-- Branch 2 -->
             <div class="branch-card bg-cover bg-center h-64 rounded-lg overflow-hidden shadow-lg transform transition-all duration-300" 
-                 style="background-image: url('img/studio4.jpg');">
+                 style="background-image: url('../img/studio4.jpg');">
                 <div class="branch-content h-full p-6 flex flex-col justify-start text-white pt-8">
                     <div class="transform transition-all duration-300">
                         <h3 class="text-xl font-bold mb-3 drop-shadow-lg">NC Královo Pole</h3>
@@ -514,7 +514,7 @@
                                 Po-Ne: 9:00 - 21:00
                             </p>
                         </div>
-                        <a href="kontakt.html" class="text-pink-300 font-semibold hover:text-pink-200 flex items-center mt-4 group bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 hover:bg-white/20 transition-all duration-300 w-fit">
+                        <a href="../kontakt/" class="text-pink-300 font-semibold hover:text-pink-200 flex items-center mt-4 group bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 hover:bg-white/20 transition-all duration-300 w-fit">
                             Více informací 
                             <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
                         </a>
@@ -524,7 +524,7 @@
 
             <!-- Branch 3 -->
             <div class="branch-card bg-cover bg-center h-64 rounded-lg overflow-hidden shadow-lg transform transition-all duration-300" 
-                 style="background-image: url('img/jihlava.jpg');">
+                 style="background-image: url('../img/jihlava.jpg');">
                 <div class="branch-content h-full p-6 flex flex-col justify-start text-white pt-8">
                     <div class="transform transition-all duration-300">
                         <h3 class="text-xl font-bold mb-3 drop-shadow-lg">Jihlava</h3>
@@ -542,7 +542,7 @@
                                 Po-Ne: 9:00 - 20:00
                             </p>
                         </div>
-                        <a href="kontakt.html" class="text-pink-300 font-semibold hover:text-pink-200 flex items-center mt-4 group bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 hover:bg-white/20 transition-all duration-300 w-fit">
+                        <a href="../kontakt/" class="text-pink-300 font-semibold hover:text-pink-200 flex items-center mt-4 group bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 hover:bg-white/20 transition-all duration-300 w-fit">
                             Více informací 
                             <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
                         </a>
@@ -553,7 +553,6 @@
         </div>
     </div>
 </section>
-
 
 
     <!-- Recenze klientek -->
